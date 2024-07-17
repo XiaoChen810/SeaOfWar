@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fe1aadccc723545b6604d2b28eeb8b, type: 3}
+  m_Name: BuildingMenu
+  m_EditorClassIdentifier: 
+  buildingsDefs:
+  - {fileID: 11400000, guid: 3707e2b6287b29149aaffcfb19d1f1fc, type: 2}
+  - {fileID: 11400000, guid: de2bfddeaba6d0741b2ca2e19e1fcf53, type: 2}
+  - {fileID: 11400000, guid: 363e0f11532713b4c87e47552ed5f63c, type: 2}
+  - {fileID: 11400000, guid: 8cede5928d557304b9453d547a8b9ee3, type: 2}

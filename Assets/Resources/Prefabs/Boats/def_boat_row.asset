@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f481853ce283e44a260a14d1d5eb63, type: 3}
+  m_Name: def_boat_row
+  m_EditorClassIdentifier: 
+  name: "\u5212\u6868\u8239"
+  prefab: {fileID: 7120235578342349157, guid: a71b3da2599fd3e4592653fa7753a358, type: 3}
+  maxHealth: 10
+  damage: 7
+  attackRange: 5
+  defend: 2
+  costForProduce: 10
+  costCoalOneStep: 3
+  needTechnologyLevel: 0
