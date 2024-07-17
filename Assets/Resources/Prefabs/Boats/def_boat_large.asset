@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f481853ce283e44a260a14d1d5eb63, type: 3}
+  m_Name: def_boat_large
+  m_EditorClassIdentifier: 
+  name: "\u6218\u8239"
+  prefab: {fileID: 7413436770245425988, guid: 7230801b9b8375c4588e4544c5acfe5a, type: 3}
+  maxHealth: 30
+  damage: 20
+  attackRange: 8
+  defend: 8
+  costForProduce: 40
+  costCoalOneStep: 5
+  needTechnologyLevel: 3

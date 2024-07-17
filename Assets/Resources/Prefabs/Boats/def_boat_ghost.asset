@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f481853ce283e44a260a14d1d5eb63, type: 3}
+  m_Name: def_boat_ghost
+  m_EditorClassIdentifier: 
+  name: "\u5E7D\u7075\u8239"
+  prefab: {fileID: 2049797926494015113, guid: 3ef0506e58ed21c49bfc23027f277f2f, type: 3}
+  maxHealth: 30
+  damage: 30
+  attackRange: 9
+  defend: 12
+  costForProduce: 70
+  costCoalOneStep: 3
+  needTechnologyLevel: 5
