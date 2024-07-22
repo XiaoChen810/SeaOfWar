@@ -168,6 +168,8 @@ public class GameManager : SingletonMono<GameManager>
 
     private void Start()
     {
+        Screen.SetResolution(1024, 738, FullScreenMode.Windowed); 
+
         // 初始化 GUI 样式
         _guiStyle = new GUIStyle();
         _guiStyle.fontSize = 24; // 字体大小
@@ -179,7 +181,7 @@ public class GameManager : SingletonMono<GameManager>
 
     private void OnGUI()
     {
-        GUI.Label(new Rect(10, 10, 300, 40), "Current Ping: " + latency.ToString("0.00") + " ms", _guiStyle);
+        GUI.Label(new Rect(10, 10, 300, 40), "Ping: " + latency.ToString("0.00") + " ms", _guiStyle);
     }
 
     private IEnumerator CheckLatency()
