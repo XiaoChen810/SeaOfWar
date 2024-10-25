@@ -8,6 +8,29 @@ using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using ChenChen_Core;
 
+class Test
+{
+    public Test(int x, int y)
+    {
+        nums = new int[x, y];
+        for (int i = 0; i < x; i++)
+        {
+            for (int j = 0; j < y; j++)
+            {
+                nums[i, j] = i * x + j;
+            }
+        }
+    }
+
+    private int[,] nums;
+
+    public void Show()
+    {
+        Console.WriteLine(nums);
+    }
+
+}
+
 namespace ChenChen_Lobby
 {
     public enum PairState
@@ -31,7 +54,7 @@ namespace ChenChen_Lobby
 
         public const int MAX_PLAYER_ONE_ROOM = 4;
 
-        private async void Start()
+        private void Start()
         {
             SetPairState(PairState.Lobby);
 

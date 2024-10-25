@@ -45,7 +45,7 @@ namespace ChenChen_Core
 
             // 选择派系出生点
             int playersNumber = gameManager.PlayerList_NetworkData.Count;
-            Hexagon[] birthPlace = MapManager.Instance.GetRandomLandHexagon(Vector3.zero, 25, playersNumber);
+            Hexagon[] birthPlace = MapManager.Instance.GetRandomLandHexagon(Vector3.zero, 30, playersNumber, 10);
             int i = 0;
 
             // 生成主城

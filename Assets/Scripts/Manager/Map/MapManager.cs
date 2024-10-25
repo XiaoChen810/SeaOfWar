@@ -252,5 +252,88 @@ namespace ChenChen_Core
                 }
             }
         }
+
+        public Hexagon[] GetRandomLandHexagon(Vector3 pos, float range, int reNum, float separation)
+        {
+            if (!HG.IsOk)
+            {
+                Debug.LogError("地图还未初始化");
+                return null;
+            }
+
+            Hexagon posHexagon = HG.FindHexagon(pos);
+
+            HashSet<Hexagon> visited = new HashSet<Hexagon>();
+            Queue<Hexagon> queue = new Queue<Hexagon>();
+            queue.Enqueue(posHexagon);
+            visited.Add(posHexagon);
+
+            List<Hexagon> result = new List<Hexagon>(); // 存放范围内所有的陆地格子
+            List<Hexagon> selectedHexagons = new List<Hexagon>(); // 存放已选中的格子
+
+            while (queue.Count > 0 && selectedHexagons.Count < reNum)
+            {
+                Hexagon hex = queue.Dequeue();
+
+                if (Vector3.Distance(hex.center, pos) > range)
+                {
+                    continue;
+                }
+
+                if (hex.type == Hexagon.Type.grass)
+                {
+                    // 检查该格子与已选中的格子之间的距离是否满足间隔要求
+                    bool isValid = true;
+                    foreach (var selectedHex in selectedHexagons)
+                    {
+                        if (Vector3.Distance(hex.center, selectedHex.center) < separation)
+                        {
+                            isValid = false;
+                            break;
+                        }
+                    }
+
+                    if (isValid)
+                    {
+                        selectedHexagons.Add(hex);
+                    }
+                }
+
+                // 将邻居加入队列
+                foreach (var neibor in hex.neibor)
+                {
+                    if (neibor != null && !visited.Contains(neibor) && Vector3.Distance(neibor.center, pos) <= range)
+                    {
+                        queue.Enqueue(neibor);
+                        visited.Add(neibor);
+                    }
+                }
+            }
+
+            if (selectedHexagons.Count < reNum)
+            {
+                Debug.LogError("错误，该范围内无法找到满足条件的足够数量的陆地格子");
+                return null;
+            }
+
+            // 打乱列表并返回需要的数量
+            RandomList(selectedHexagons);
+
+            return selectedHexagons.Take(reNum).ToArray();
+
+            void RandomList(List<Hexagon> origin)
+            {
+                int n = origin.Count;
+                for (int i = 0; i < n; i++)
+                {
+                    int j = UnityEngine.Random.Range(i, n);
+                    if (!origin.TrySwap(i, j, out var error))
+                    {
+                        Debug.LogError(error);
+                    }
+                }
+            }
+        }
+
     }
 }

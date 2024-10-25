@@ -188,15 +188,19 @@ public class GameManager : SingletonMono<GameManager>
     {
         while (true)
         {
-            if (Runner != null && playerRef_local != PlayerRef.None)
-            {
-                // 获取当前的延迟
-                latency = Runner.GetPlayerRtt(playerRef_local);
-                latency *= 1000;
-            }
-
             // 每秒检查一次
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(10f);
+
+            if (gameIsStart)
+            {
+                if (Runner != null && playerRef_local != PlayerRef.None)
+                {
+                    // 获取当前的延迟
+                    Debug.Log("获取当前延迟");
+                    latency = Runner.GetPlayerRtt(playerRef_local);
+                    latency *= 1000;
+                }
+            }
         }
     }
     #endregion
